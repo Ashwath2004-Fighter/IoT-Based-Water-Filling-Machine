@@ -73,6 +73,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            z-index: 1001;
         }
 
         .logo-icon {
@@ -133,6 +134,7 @@
             font-size: 1.8rem;
             color: var(--primary);
             cursor: pointer;
+            z-index: 1001;
         }
 
         /* Hero Section */
@@ -144,6 +146,7 @@
             overflow: hidden;
             display: flex;
             align-items: center;
+            padding: 2rem 0;
         }
 
         .water-drops {
@@ -198,6 +201,7 @@
 
         .hero-buttons {
             display: flex;
+            flex-wrap: wrap;
             gap: 1rem;
             animation: slideInLeft 1s ease 0.4s backwards;
         }
@@ -213,7 +217,9 @@
             font-size: 1rem;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
+            text-align: center;
         }
 
         .btn-primary {
@@ -479,6 +485,7 @@
             font-size: 2rem;
             font-weight: 800;
             color: white;
+            flex-shrink: 0;
         }
 
         .step-content h3 {
@@ -547,7 +554,7 @@
 
         .demo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
         }
 
@@ -634,6 +641,7 @@
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
+            flex-shrink: 0;
         }
 
         .contact-form {
@@ -768,18 +776,34 @@
 
         /* Responsive Design */
         @media (max-width: 968px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1.2rem;
+            }
+
             .nav-links {
                 position: fixed;
-                top: 80px;
+                top: 70px;
                 right: -100%;
-                height: calc(100vh - 80px);
-                width: 70%;
+                height: calc(100vh - 70px);
+                width: 80%;
+                max-width: 300px;
                 background: white;
                 flex-direction: column;
                 align-items: flex-start;
                 padding: 2rem;
                 box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
                 transition: right 0.3s ease;
+                gap: 1.5rem;
             }
 
             .nav-links.active {
@@ -790,44 +814,178 @@
                 display: block;
             }
 
+            .hero {
+                min-height: auto;
+                padding: 2rem 0;
+            }
+
             .hero-content {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem 1.5rem;
             }
 
             .hero-text h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+                margin: 0;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-header {
+                margin-bottom: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-header p {
+                font-size: 1rem;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
             .problem-solution {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .components-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step {
+                grid-template-columns: 1fr;
+                padding: 2rem 1.5rem;
+                gap: 1.5rem;
+            }
+
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+                margin: 0 auto;
+            }
+
+            .step-content h3 {
+                font-size: 1.2rem;
+                text-align: center;
+            }
+
+            .step-content p {
+                font-size: 0.95rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .demo-grid {
                 grid-template-columns: 1fr;
             }
 
             .contact-container {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 2rem;
             }
 
             .footer-content {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .scroll-top {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
             }
         }
 
         @media (max-width: 640px) {
             .hero-text h1 {
-                font-size: 2rem;
+                font-size: 1.6rem;
             }
 
             .section-header h2 {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
 
-            .components-grid,
-            .features-grid,
-            .demo-grid {
-                grid-template-columns: 1fr;
+            .btn {
+                padding: 0.9rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            .component-card,
+            .feature-card {
+                padding: 1.5rem;
+            }
+
+            .demo-image {
+                height: 250px;
+            }
+
+            .footer-bottom p {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1rem;
+            }
+
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 1rem;
+            }
+
+            .hero-text h1 {
+                font-size: 1.4rem;
+            }
+
+            .hero-text p {
+                font-size: 0.9rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.3rem;
+            }
+
+            .section-header p {
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 2.5rem 1rem;
             }
         }
     </style>
@@ -864,8 +1022,8 @@
                 <div class="hero-buttons">
                     <a href="#about" class="btn btn-primary">View Project Details →</a>
                     <a href="#demo" class="btn btn-secondary">See Demo</a>
-                    <a href="#simulation" class="btn btn-primary" style="background: linear-gradient(135deg, #ff6f00 0%, #ff8f00 100%); margin-top: 1rem; width: 100%;">🚀 Online Simulation</a>
-                    <a href="#" onclick="downloadReport(); return false;" class="btn btn-primary" style="background: linear-gradient(135deg, #00c853 0%, #00e676 100%); margin-top: 0.5rem; width: 100%;">📥 Download Full Project Report</a>
+                    <a href="#simulation" class="btn btn-primary" style="background: linear-gradient(135deg, #ff6f00 0%, #ff8f00 100%);">🚀 Online Simulation</a>
+                    <a href="#" onclick="downloadReport(); return false;" class="btn btn-primary" style="background: linear-gradient(135deg, #00c853 0%, #00e676 100%);">📥 Download Report</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -903,7 +1061,7 @@
                 </div>
                 
                 <div style="text-align: center; margin-top: 2.5rem;">
-                    <a href="#" onclick="downloadReport(); return false;" class="btn btn-primary" style="background: linear-gradient(135deg, #00c853 0%, #00e676 100%); display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.1rem; padding: 1.2rem 2.5rem;">
+                    <a href="#" onclick="downloadReport(); return false;" class="btn btn-primary" style="background: linear-gradient(135deg, #00c853 0%, #00e676 100%); font-size: 1rem; padding: 1rem 2rem;">
                         📥 Download Full Project Report
                     </a>
                 </div>
@@ -1130,7 +1288,7 @@
             <div class="demo-card" style="max-width: 100%;">
                 <div class="demo-image" style="height: 450px; background: linear-gradient(135deg, #00bfa5 0%, #00796b 100%); position: relative;">
                     <img src="Simulation.jpg" alt="Tinkercad Simulation Preview" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 800 600\'%3E%3Cdefs%3E%3ClinearGradient id=\'simBg\' x1=\'0%25\' y1=\'0%25\' x2=\'100%25\' y2=\'100%25\'%3E%3Cstop offset=\'0%25\' style=\'stop-color:%2300bfa5;stop-opacity:1\' /%3E%3Cstop offset=\'100%25\' style=\'stop-color:%2300796b;stop-opacity:1\' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill=\'url(%23simBg)\' width=\'800\' height=\'600\'/%3E%3Crect x=\'100\' y=\'100\' width=\'600\' height=\'400\' fill=\'white\' rx=\'10\'/%3E%3Crect x=\'100\' y=\'100\' width=\'600\' height=\'60\' fill=\'%23ff6f00\' rx=\'10\'/%3E%3Ccircle cx=\'140\' cy=\'130\' r=\'15\' fill=\'white\' opacity=\'0.3\'/%3E%3Ccircle cx=\'190\' cy=\'130\' r=\'15\' fill=\'white\' opacity=\'0.3\'/%3E%3Ccircle cx=\'240\' cy=\'130\' r=\'15\' fill=\'white\' opacity=\'0.3\'/%3E%3Ctext x=\'400\' y=\'145\' font-family=\'Arial\' font-size=\'24\' fill=\'white\' text-anchor=\'middle\' font-weight=\'bold\'%3ETinkercad Simulation%3C/text%3E%3Crect x=\'150\' y=\'200\' width=\'200\' height=\'120\' fill=\'%234caf50\' rx=\'5\'/%3E%3Ctext x=\'250\' y=\'265\' font-family=\'Arial\' font-size=\'20\' fill=\'white\' text-anchor=\'middle\'%3EArduino Uno%3C/text%3E%3Ccircle cx=\'250\' cy=\'285\' r=\'5\' fill=\'white\'/%3E%3Ccircle cx=\'230\' cy=\'285\' r=\'5\' fill=\'white\'/%3E%3Ccircle cx=\'270\' cy=\'285\' r=\'5\' fill=\'white\'/%3E%3Crect x=\'420\' y=\'220\' width=\'150\' height=\'80\' fill=\'%2300c9ff\' rx=\'5\'/%3E%3Ctext x=\'495\' y=\'265\' font-family=\'Arial\' font-size=\'16\' fill=\'white\' text-anchor=\'middle\'%3EUltrasonic%3C/text%3E%3Ctext x=\'495\' y=\'285\' font-family=\'Arial\' font-size=\'16\' fill=\'white\' text-anchor=\'middle\'%3ESensor%3C/text%3E%3Cline x1=\'350\' y1=\'260\' x2=\'420\' y2=\'260\' stroke=\'%23333\' stroke-width=\'3\'/%3E%3Crect x=\'150\' y=\'360\' width=\'100\' height=\'60\' fill=\'%23ff9800\' rx=\'5\'/%3E%3Ctext x=\'200\' y=\'395\' font-family=\'Arial\' font-size=\'14\' fill=\'white\' text-anchor=\'middle\'%3ERelay%3C/text%3E%3Crect x=\'300\' y=\'360\' width=\'120\' height=\'60\' fill=\'%239c27b0\' rx=\'5\'/%3E%3Ctext x=\'360\' y=\'395\' font-family=\'Arial\' font-size=\'14\' fill=\'white\' text-anchor=\'middle\'%3EWater Pump%3C/text%3E%3Cpath d=\'M 250 320 L 250 360\' stroke=\'%23333\' stroke-width=\'3\'/%3E%3Cpath d=\'M 250 390 L 300 390\' stroke=\'%23333\' stroke-width=\'3\'/%3E%3Ccircle cx=\'650\' cy=\'260\' r=\'40\' fill=\'%23ffc107\' opacity=\'0.3\'/%3E%3Cpolygon points=\'650,240 665,270 635,270\' fill=\'%23ffc107\'/%3E%3C/svg%3E';">
-                    <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(0, 0, 0, 0.7); padding: 1rem 2rem; border-radius: 10px; color: white; font-size: 1.1rem;">
+                    <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(0, 0, 0, 0.7); padding: 1rem 2rem; border-radius: 10px; color: white; font-size: 1.1rem; text-align: center; max-width: 90%;">
                         🎮 Click below to open interactive simulation
                     </div>
                 </div>
@@ -1139,9 +1297,8 @@
                     <p style="margin-bottom: 2rem; font-size: 1.05rem; color: var(--text-light);">
                         Explore the complete circuit design with Arduino Uno, ultrasonic sensor, relay module, and water pump. Test the project virtually, modify components, and see real-time simulation before building the hardware.
                     </p>
-                    <a href="https://www.tinkercad.com/things/1B7bsdfktep-iot-based-water-filling-machine-using-arduion-uno/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard%2Fdesigns%2Fcircuits" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #ff6f00 0%, #ff8f00 100%); font-size: 1.1rem; padding: 1.2rem 2.5rem; display: inline-flex; align-items: center; gap: 0.5rem;">
-                        🚀 Open Tinkercad Simulation
-                        <span style="font-size: 1.2rem;">→</span>
+                    <a href="https://www.tinkercad.com/things/1B7bsdfktep-iot-based-water-filling-machine-using-arduion-uno/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard%2Fdesigns%2Fcircuits" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #ff6f00 0%, #ff8f00 100%); font-size: 1.1rem; padding: 1.2rem 2.5rem;">
+                        🚀 Open Tinkercad Simulation →
                     </a>
                     <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-light);">
                         <strong>Features:</strong> Edit circuit • Run simulation • Test sensors • Debug code • Download design
@@ -1375,6 +1532,7 @@
                 z-index: 10000;
                 text-align: center;
                 font-family: 'Poppins', sans-serif;
+                max-width: 90%;
             `;
             notification.innerHTML = `
                 <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">📥 Downloading Project Report</h3>
